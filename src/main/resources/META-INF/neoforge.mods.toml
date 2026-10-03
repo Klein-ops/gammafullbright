@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+
+[[mods]]
+modId="gammafullbright"
+version="2.0.1"
+displayName="伽马全亮"
+authors="GammaFullbright"
+description='''
+纯客户端模组：按 G 键一键将亮度提升到夜视药水级别（超亮），再按一次恢复原亮度。基于 BetterBrightnessSlider 核心逻辑重构，修复了原模组打开设置崩溃的问题。
+'''
+[[mixins]]
+config="gammafullbright.mixins.json"
+[[dependencies.gammafullbright]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.1.176,)"
+    ordering="NONE"
+    side="CLIENT"
+[[dependencies.gammafullbright]]
+    modId="minecraft"
+    type="required"
+    versionRange="[1.21.1,1.21.2)"
+    ordering="NONE"
+    side="CLIENT"

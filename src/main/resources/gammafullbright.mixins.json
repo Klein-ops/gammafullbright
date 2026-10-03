@@ -1,0 +1,14 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "com.gamma.fullbright.mixin",
+    "compatibilityLevel": "JAVA_16",
+    "refmap": "gammafullbright.refmap.json",
+    "client": [
+        "OptionInstanceMixin",
+        "LightTextureMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}
