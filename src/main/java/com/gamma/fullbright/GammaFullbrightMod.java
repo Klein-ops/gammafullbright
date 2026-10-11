@@ -4,6 +4,7 @@ import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Options;
+import net.minecraft.network.chat.Component;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -93,12 +94,14 @@ public class GammaFullbrightMod {
             options.gamma().set(FULLBRIGHT_GAMMA);
             active = true;
             GammaFullbrightConfig.ENABLED.set(true);
+            mc.player.displayClientMessage(Component.literal("常亮：开"), true);
         } else {
             options.gamma().set(originalGamma);
             active = false;
             GammaFullbrightConfig.ENABLED.set(false);
             // 关闭时保存恢复后的 gamma 值到 options.txt
             options.save();
+            mc.player.displayClientMessage(Component.literal("常亮：关"), true);
         }
         // 配置变更立即写入磁盘，保证下次启动能读到最新状态
         GammaFullbrightConfig.ENABLED.save();
